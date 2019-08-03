@@ -1,0 +1,54 @@
+$red: #d90404;
+$base-font-color: #333;
+
+$base-spacing: 2em;
+$small-spacing: $base-spacing / 2;
+
+$navigation-height: 72px;
+
+body {
+  background-color: white;
+  color: $base-font-color;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir",
+    "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans",
+    "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
+    "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+}
+
+.sabotage-logo {
+  height: calc(#{$navigation-height} - #{$small-spacing});
+}
+
+section.navigation {
+  width: 100%;
+  height: $navigation-height;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+  a {
+    color: $base-font-color;
+  }
+}
+
+section.hero {
+  min-height: 30vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+
+  h1 {
+    color: $red;
+  }
+}
+
+section.worldview {
+  padding: $base-spacing;
+  color: white;
+  background-color: $red;
+  width: 100%;
+}
