@@ -1,10 +1,12 @@
 <section class="navigation">
-  <%= image_tag 'sabotage-records-logo.png', class: 'sabotage-logo' %>
+  <% link_to 'index' do %>
+    <%= image_tag 'sabotage-records-logo.png', class: 'sabotage-logo' %>
+  <% end %>
 
   <nav>
     <%= link_to 'Home', 'index' %>
     |
-    <%= link_to 'Request our Services', 'services' %>
+    <%= link_to 'Services', 'services' %>
     |
     <%= link_to 'Request an Invite', 'invite', class: 'primary-link' %>
   </nav>

@@ -1,6 +1,7 @@
 @import 'variables';
 @import 'typography';
 @import 'buttons';
+@import 'forms';
 
 $left-view-width: 40vw;
 $right-view-width: 60vw;
@@ -33,6 +34,7 @@ section.navigation {
   }
 
   a {
+    font-size: 80%;
     color: $red;
     margin: 0 ($small-spacing / 4);
     text-decoration: none;
@@ -44,6 +46,10 @@ section.navigation {
 
   @media screen and (min-width: $large-screen) {
     padding: $small-spacing ($base-spacing * 2);
+
+    a {
+      font-size: 100%;
+    }
   }
 }
 
@@ -54,6 +60,7 @@ section.hero {
   align-items: center;
   justify-content: center;
   text-align: left;
+  margin-bottom: $base-spacing;
 
   section.hero__text {
     padding: 0 ($base-spacing * 2);
@@ -74,6 +81,7 @@ section.hero {
     justify-content: center;
     height: 75vh;
     width: $left-view-width;
+    margin-bottom: 0;
   }
 }
 
@@ -181,7 +189,7 @@ section.list-of-services {
     flex: 1;
   }
 
-  button {
+  a.primary-button {
     margin-left: $base-spacing * 2;
     flex: 1;
   }
@@ -193,6 +201,7 @@ section.list-of-services {
 }
 
 ul.services-list {
+  padding-right: $base-spacing;
   article {
     margin-bottom: $base-spacing;
 
@@ -233,10 +242,12 @@ footer {
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
+    margin: $small-spacing 0;
   }
 
   a {
     color: white;
+    margin: ($small-spacing / 4) 0;
   }
 
   img {
@@ -261,31 +272,29 @@ section.services {
   ul.services-list {
     margin-top: $small-spacing * 2;
   }
+}
 
-  form {
-    padding: $base-spacing * 2;
-    border: $base-border;
-    margin: $base-spacing * 2;
+section.invite {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
 
-    input[type=email] {
-      padding: $small-spacing;
-      border: 1px solid $red;
-    }
+  section.invite__hero {
+    margin: $base-spacing;
+    margin-bottom: 0;
+    color: $red;
+  }
 
-    legend {
-      font-size: 1.5em;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: $small-spacing;
-    }
+  @media screen and (min-width: $large-screen) {
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
 
-    label {
-      margin-right: $small-spacing;
-    }
-
-    input[type=submit] {
-      margin-top: $small-spacing * 2;
-      width: 100%;
+    section.invite__hero {
+      max-width: 30vw;
+      margin: ($base-spacing * 2) $base-spacing;
     }
   }
 }

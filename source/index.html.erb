@@ -1,5 +1,5 @@
 ---
-title: Welcome to Middleman
+title: Sabotage Records
 ---
 
 <section class="top-container">
@@ -10,7 +10,7 @@ title: Welcome to Middleman
       </h1>
 
       <p>We syndicate records to help artists blow up and remain independent.</p>
-      <button>Request an Invite</button>
+      <%= link_to 'Request an Invite', 'invite', class: 'primary-button' %>
     </section>
   </section>
 
@@ -40,7 +40,7 @@ title: Welcome to Middleman
 
   <section class="list-of-services">
     <%= partial 'shared/list_of_services' %>
-    <button>Request our Services</button>
+    <%= link_to 'Request our Services', 'services', class: 'primary-button' %>
   </section>
 </section>
 

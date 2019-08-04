@@ -1,0 +1,31 @@
+form {
+  padding: $base-spacing;
+  border: $base-border;
+  margin: $base-spacing;
+
+  @media screen and (min-width: $large-screen) {
+    padding: $base-spacing * 2;
+    margin: $base-spacing * 2;
+  }
+
+  input[type=email] {
+    padding: $small-spacing;
+    border: 1px solid $red;
+  }
+
+  legend {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: $small-spacing;
+  }
+
+  label {
+    margin-right: $small-spacing;
+  }
+
+  input[type=submit] {
+    margin-top: $small-spacing * 2;
+    width: 100%;
+  }
+}
