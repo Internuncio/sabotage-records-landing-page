@@ -1,54 +1,120 @@
-$red: #d90404;
-$base-font-color: #333;
-
-$base-spacing: 2em;
-$small-spacing: $base-spacing / 2;
-
-$navigation-height: 72px;
+@import 'variables';
+@import 'typography';
+@import 'buttons';
 
 body {
   background-color: white;
   color: $base-font-color;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir",
-    "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans",
-    "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu",
-    "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+  font-family: $base-font-family;
 }
 
-.sabotage-logo {
-  height: calc(#{$navigation-height} - #{$small-spacing});
-}
 
 section.navigation {
-  width: 100%;
   height: $navigation-height;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
+  padding: $small-spacing $base-spacing;
+
+  img.sabotage-logo {
+    height: calc(#{$navigation-height} - #{$small-spacing});
+  }
 
   a {
-    color: $base-font-color;
-  }
-}
-
-section.hero {
-  min-height: 30vh;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: flex-start;
-  justify-content: center;
-  text-align: left;
-
-  h1 {
     color: $red;
   }
 }
 
+section.hero {
+  min-height: 50vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  min-width: 30vw;
+  padding: 0 ($base-spacing * 2);
+
+  h1 {
+    color: $red;
+    margin-top: $base-spacing;
+  }
+
+  p {
+    line-height: $base-line-height * 1.2;
+    font-size: $base-font-size * 1.2;
+  }
+
+  @media screen and (min-width: $large-screen) {
+    align-items: flex-start;
+    justify-content: center;
+    height: 75vh;
+  }
+}
+
 section.worldview {
-  padding: $base-spacing;
   color: white;
   background-color: $red;
   width: 100%;
+  height: 75vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  background-size: cover;
+  background-image: image_url('punk-background.png');
+  position: relative;
+
+  section.worldview__text {
+    padding: $base-spacing;
+    color: white;
+    z-index: 9999;
+    min-height: 75vh;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (min-width: $large-screen) {
+      padding: 10vh;
+      text-align: left;
+      align-items: flex-start;
+      justify-content: center;
+    }
+  }
+
+  h1 {
+    z-index: 9999;
+  }
+
+  p {
+    z-index: 9999;
+    line-height: $base-line-height * 1.2;
+    font-size: $base-font-size * 1.2;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    max-width: $large-screen;
+
+    @media screen and (min-width: $large-screen) {
+    }
+  }
+
+  div.worldview__cover {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: $red;
+    opacity: 0.65;
+  }
+}
+
+section.top-container {
+  @media screen and (min-width: $large-screen) {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+  }
 }
