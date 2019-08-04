@@ -2,6 +2,10 @@
 @import 'typography';
 @import 'buttons';
 
+$left-view-width: 40vw;
+$right-view-width: 60vw;
+$black: #0f0f0f;
+
 body {
   background-color: white;
   color: $base-font-color;
@@ -17,6 +21,8 @@ section.navigation {
   align-items: center;
   justify-content: space-between;
   padding: $small-spacing $base-spacing;
+  background-color: $black;
+  color: white;
 
   img.sabotage-logo {
     height: calc(#{$navigation-height} - #{$small-spacing});
@@ -24,6 +30,16 @@ section.navigation {
 
   a {
     color: $red;
+    margin: 0 ($small-spacing / 4);
+    text-decoration: none;
+  }
+
+  a.primary-link {
+    color: white;
+  }
+
+  @media screen and (min-width: $large-screen) {
+    padding: $small-spacing ($base-spacing * 2);
   }
 }
 
@@ -34,12 +50,14 @@ section.hero {
   align-items: center;
   justify-content: center;
   text-align: left;
-  min-width: 30vw;
-  padding: 0 ($base-spacing * 2);
+
+  section.hero__text {
+    padding: 0 ($base-spacing * 2);
+  }
 
   h1 {
     color: $red;
-    margin-top: $base-spacing;
+    margin-top: $small-spacing;
   }
 
   p {
@@ -51,13 +69,13 @@ section.hero {
     align-items: flex-start;
     justify-content: center;
     height: 75vh;
+    width: $left-view-width;
   }
 }
 
 section.worldview {
   color: white;
   background-color: $red;
-  width: 100%;
   height: 75vh;
   display: flex;
   flex-flow: column nowrap;
@@ -68,7 +86,6 @@ section.worldview {
   position: relative;
 
   section.worldview__text {
-    padding: $base-spacing;
     color: white;
     z-index: 9999;
     min-height: 75vh;
@@ -76,9 +93,10 @@ section.worldview {
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
+    padding: $base-spacing;
+    margin-left: $base-spacing;
 
     @media screen and (min-width: $large-screen) {
-      padding: 10vh;
       text-align: left;
       align-items: flex-start;
       justify-content: center;
@@ -96,9 +114,6 @@ section.worldview {
     font-weight: 400;
     letter-spacing: 0.5px;
     max-width: $large-screen;
-
-    @media screen and (min-width: $large-screen) {
-    }
   }
 
   div.worldview__cover {
@@ -108,6 +123,71 @@ section.worldview {
     background-color: $red;
     opacity: 0.65;
   }
+
+  @media screen and (min-width: $large-screen) {
+    width: $right-view-width;
+  }
+}
+
+section.how-we-work {
+  background-image: image_url('rapper-background.png');
+  background-size: cover;
+  height: 100vh;
+  color: white;
+  width: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+
+  h2 {
+    font-size: 1.5rem;
+    line-height: $base-line-height * 1.2;
+    padding: $base-spacing * 2;
+    z-index: 9999;
+    opacity: 0.9;
+
+    @media screen and (min-width: $large-screen) {
+    }
+  }
+
+  div.how-we-work__cover {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: $black;
+    opacity: 0.50;
+  }
+
+  @media screen and (min-width: $large-screen) {
+    width: $left-view-width;
+  }
+}
+
+section.list-of-services {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  margin: ($base-spacing * 2) 0;
+
+  ul {
+    padding-left: $base-spacing * 2;
+    flex: 1;
+  }
+
+  article {
+    margin-bottom: $base-spacing;
+
+    header {
+      color: $red;
+    }
+  }
+
+  @media screen and (min-width: $large-screen) {
+    width: $right-view-width;
+  }
 }
 
 section.top-container {
@@ -116,5 +196,39 @@ section.top-container {
     flex-flow: row nowrap;
     align-items: center;
     justify-content: center;
+  }
+}
+
+section.bottom-container {
+  @media screen and (min-width: $large-screen) {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+footer {
+  height: 50vh;
+  background-color: $black;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+
+  nav {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  a {
+    color: white;
+  }
+
+  img {
+    margin-top: $base-spacing * 2;
+    height: 72px;
   }
 }

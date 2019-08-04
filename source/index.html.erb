@@ -5,18 +5,25 @@ title: Welcome to Middleman
 <section class="navigation">
   <%= image_tag 'sabotage-records-logo.png', class: 'sabotage-logo' %>
 
-  <%= link_to 'Home', '#' %>
+  <nav>
+    <%= link_to 'Home', 'index' %>
+    |
+    <%= link_to 'Request our Services', 'services' %>
+    |
+    <%= link_to 'Request an Invite', 'invite', class: 'primary-link' %>
+  </nav>
 </section>
 
 <section class="top-container">
   <section class="hero">
-    <h1>
-      The Modern Record Label
-    </h1>
+    <section class="hero__text">
+      <h1>
+        The Modern Record Label
+      </h1>
 
-    <p>We syndicate records to help artists blow up and remain independent.</p>
-
-    <button>Request an Invite</button>
+      <p>We syndicate records to help artists blow up and remain independent.</p>
+      <button>Request an Invite</button>
+    </section>
   </section>
 
   <section class="worldview">
@@ -33,3 +40,70 @@ title: Welcome to Middleman
     </section>
   </section>
 </section>
+
+<section class="bottom-container">
+  <section class="how-we-work">
+    <div class="how-we-work__cover"></div>
+    <h2>
+    We focus on digital distribution and promotion. We work hard to measure and
+    test every dollar we spend to give you the most effective fuel for takeoff.
+    </h2>
+  </section>
+
+  <section class="list-of-services">
+    <ul>
+      <hr />
+
+      <li>
+        <article>
+          <header><h3>Instagram Marketing</h3></header>
+          <p>Target new fans, grow your followers, increase your engagement.</p>
+        </article>
+      </li>
+
+      <hr />
+
+      <li>
+        <article>
+          <header><h3>Youtube Promotion</h3></header>
+          <p>Viral marketing, high quality targetting, and authentic viewership.</p>
+        </article>
+      </li>
+
+      <hr />
+
+      <li>
+        <article>
+          <header><h3>Spotify Marketing</h3></header>
+          <p>Increase streaming royalties, playlist submissions, and advanced metrics.</p>
+        </article>
+      </li>
+
+      <hr />
+
+      <li>
+        <article>
+          <header><h3>Artist Branding and Publication</h3></header>
+          <p>Album covers, press kit design, ecommerce and more.</p>
+        </article>
+      </li>
+
+      <hr />
+
+      <button>Request our Services</button>
+    </ul>
+  </section>
+</section>
+
+<footer>
+  <nav>
+    <%= link_to 'Home', 'index' %>
+    <%= link_to(
+      'Instagram',
+      'https://www.instagram.com/fuckingsabotage',
+      target: '_blank'
+    ) %>
+  </nav>
+
+  <%= image_tag 'sabotage-records-logo.png', class: 'sabotage-logo' %>
+</footer>
