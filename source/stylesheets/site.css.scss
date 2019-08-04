@@ -13,6 +13,10 @@ body {
   font-family: $base-font-family;
 }
 
+main {
+  min-height: calc(100vh - #{$navigation-height});
+}
+
 
 section.navigation {
   height: $navigation-height;
@@ -172,21 +176,29 @@ section.list-of-services {
   justify-content: center;
   margin: ($base-spacing * 2) 0;
 
-  ul {
+  ul.services-list {
     padding-left: $base-spacing * 2;
     flex: 1;
   }
 
+  button {
+    margin-left: $base-spacing * 2;
+    flex: 1;
+  }
+
+
+  @media screen and (min-width: $large-screen) {
+    width: $right-view-width;
+  }
+}
+
+ul.services-list {
   article {
     margin-bottom: $base-spacing;
 
     header {
       color: $red;
     }
-  }
-
-  @media screen and (min-width: $large-screen) {
-    width: $right-view-width;
   }
 }
 
@@ -230,5 +242,50 @@ footer {
   img {
     margin-top: $base-spacing * 2;
     height: 72px;
+  }
+}
+
+section.services {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (min-width: $large-screen) {
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    height: 90vh;
+  }
+
+  ul.services-list {
+    margin-top: $small-spacing * 2;
+  }
+
+  form {
+    padding: $base-spacing * 2;
+    border: $base-border;
+    margin: $base-spacing * 2;
+
+    input[type=email] {
+      padding: $small-spacing;
+      border: 1px solid $red;
+    }
+
+    legend {
+      font-size: 1.5em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: $small-spacing;
+    }
+
+    label {
+      margin-right: $small-spacing;
+    }
+
+    input[type=submit] {
+      margin-top: $small-spacing * 2;
+      width: 100%;
+    }
   }
 }

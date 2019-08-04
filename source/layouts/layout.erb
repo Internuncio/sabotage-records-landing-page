@@ -11,6 +11,10 @@
     <%= javascript_include_tag "site" %>
   </head>
   <body>
-    <%= yield %>
+    <%= partial 'shared/navigation' %>
+    <main>
+      <%= yield %>
+    </main>
+    <%= partial 'shared/footer' %>
   </body>
 </html>
