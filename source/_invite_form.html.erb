@@ -1,0 +1,44 @@
+<form class="invite-request" name="invite-request" netlify>
+  <section class="form-inputs">
+    <fieldset>
+      <legend>Contact Information</legend>
+      <div class="input">
+        <label name="email">Name</label> 
+        <input type="text" name="name" />
+      </div>
+
+      <div class="input">
+        <label name="email">Email</label>
+        <input type="email" name="email" />
+      </div>
+
+      <div class="input">
+        <label name="phone">Phone</label>
+        <input type="tel" name="phone" />
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Social Media</legend>
+      <div class="input">
+        <label name="instagram">Link to Instagram</label>
+        <input type="text" name="instagram" />
+      </div>
+
+      <div class="input">
+        <label name="youtube">Link to Youtube</label>
+        <input type="text" name="youtube" />
+      </div>
+
+      <div class="input--radio">
+        <label>Is your music on Spotify, Apple Music, etc?</label>
+        <%= partial 'radio_option', locals: { label: 'Yes', value: 'yes', name: 'distributed' } %>
+        <%= partial 'radio_option', locals: { label: 'No', value: 'no', name: 'distributed' } %>
+      </div>
+    </fieldset>
+  </section>
+
+  <section class="form-links">
+    <button type="submit">Send</button>
+  </section>
+</form>

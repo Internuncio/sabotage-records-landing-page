@@ -1,0 +1,77 @@
+<form class="service-request" name="service-request" netlify>
+  <section class="form-inputs">
+    <fieldset>
+      <legend>Contact Information</legend>
+      <div class="input">
+        <label name="email">Name</label> 
+        <input type="text" name="name" />
+      </div>
+
+      <div class="input">
+        <label name="email">Email</label>
+        <input type="email" name="email" />
+      </div>
+
+      <div class="input">
+        <label name="phone">Phone</label>
+        <input type="tel" name="phone" />
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Services</legend>
+      <div class="input--checkboxes">
+        <label>Which services are you interested in?</label>
+        <%= partial 'checkbox_option', locals: { name: 'management_consulting', title: 'Management / Consulting' } %>
+        <%= partial 'checkbox_option', locals: { name: 'instagram_growth_campaign', title: 'Instagram Growth Campaign' } %>
+        <%= partial 'checkbox_option', locals: { name: 'youtube_video_marketing', title: 'Youtube Video Marketing' } %>
+        <%= partial 'checkbox_option', locals: { name: 'spotify_promotion', title: 'Spotify Promotion' } %>
+        <%= partial 'checkbox_option', locals: { name: 'website_graphic_design', title: 'Website / Graphic Design' } %>
+        <%= partial 'checkbox_option', locals: { name: 'monetization_royalties', title: 'Monetization / Royalties' } %>
+        <%= partial 'checkbox_option', locals: { name: 'record_label_meetings', title: 'Record Label Meetings' } %>
+        <%= partial 'checkbox_option', locals: { name: 'mixing_mastering', title: 'Mixing & Mastering' } %>
+      </div>
+    </fieldset>
+
+
+    <fieldset>
+      <legend>Social Media</legend>
+      <div class="input">
+        <label name="instagram">Link to Instagram</label>
+        <input type="text" name="instagram" />
+      </div>
+
+      <div class="input">
+        <label name="youtube">Link to Youtube</label>
+        <input type="text" name="youtube" />
+      </div>
+
+      <div class="input--radio">
+        <label>Is your music on Spotify, Apple Music, etc?</label>
+        <%= partial 'radio_option', locals: { label: 'Yes', value: 'yes', name: 'distributed' } %>
+        <%= partial 'radio_option', locals: { label: 'No', value: 'no', name: 'distributed' } %>
+      </div>
+    </fieldset>
+
+
+    <fieldset>
+      <legend>Budget & Timeline</legend>
+      <div class="input--radio">
+        <label>How soon are you looking to get started?</label>
+        <%= partial 'radio_option', locals: { label: 'Today', value: 'today', name: 'start_date' } %>
+        <%= partial 'radio_option', locals: { label: 'This Week', value: 'this_week', name: 'start_date' } %>
+        <%= partial 'radio_option', locals: { label: 'Next Month', value: 'next_month', name: 'start_date' } %>
+        <%= partial 'radio_option', locals: { label: "Don't Know", value: 'unknown', name: 'start_date' } %>
+      </div>
+
+      <div class="input">
+        <label name="budget">What is your total budget for this campaign?</label>
+        <input type="text" name="budget" />
+      </div>
+    </fieldset>
+  </section>
+
+  <section class="form-links">
+    <button type="submit">Send</button>
+  </section>
+</form>

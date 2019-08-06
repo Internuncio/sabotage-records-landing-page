@@ -261,16 +261,29 @@ section.services {
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
+  padding: $base-spacing;
+
+  ul.services-list {
+    margin-top: $small-spacing * 2;
+  }
+
+  form.service-request {
+    width: 100%;
+
+    button {
+      width: 100%;
+    }
+
+    @media screen and (min-width: $large-screen) {
+      width: auto;
+      min-width: 40vw;
+    }
+  }
 
   @media screen and (min-width: $large-screen) {
     flex-flow: row nowrap;
     align-items: flex-start;
     justify-content: center;
-    height: 90vh;
-  }
-
-  ul.services-list {
-    margin-top: $small-spacing * 2;
   }
 }
 
@@ -279,22 +292,33 @@ section.invite {
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
+  padding: $base-spacing;
 
   section.invite__hero {
-    margin: $base-spacing;
     margin-bottom: 0;
     color: $red;
   }
 
+  form.invite-request {
+    width: 100%;
+
+    button {
+      width: 100%;
+    }
+  }
+
   @media screen and (min-width: $large-screen) {
     flex-flow: row nowrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    height: 90vh;
 
     section.invite__hero {
-      max-width: 30vw;
       margin: ($base-spacing * 2) $base-spacing;
+    }
+
+    form.invite-request {
+      width: auto;
+      min-width: 40vw;
     }
   }
 }
